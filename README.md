@@ -38,9 +38,8 @@ To run this project locally, follow these steps:
 ## Usage
 
 To start the development server, run:
-
-   ```sh
-   npm start
+    ```sh
+    npm start
 
 This will run the app in development mode. Open http://localhost:3000 to view it in the browser.
 
@@ -49,7 +48,6 @@ Feel free to reach out to me via email for any inquiries or collaboration opport
 
 You can also connect with me on:
 
-GitHub
-LinkedIn
-Instagram
+- [LinkedIn](https://www.linkedin.com/in/robinsharma85)
+- [Instagram](https://www.instagram.com/robin_1e)
 © 2024 Robin Sharma. All rights reserved.

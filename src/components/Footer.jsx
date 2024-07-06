@@ -21,7 +21,7 @@ const socialLinks = [
   },
   {
     icon: <LinkedIn sx={{ height: 40, width: 40 }} />,
-    link: "https://www.linkedin.com/in/robinsharma85 ",
+    link: "https://www.linkedin.com/in/robinsharma85",
   },
   {
     icon: <Instagram sx={{ height: 40, width: 40 }} />,
