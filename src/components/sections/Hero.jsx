@@ -4,9 +4,8 @@ import HeroImage from "../../assets/images/heroCropped.png";
 
 const styles = {
   container: {
-    minHeight:"max-content",
     minHeight: 650,
-    height:"100Vh",
+    height: "100Vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -34,20 +33,43 @@ const styles = {
 
 function Hero() {
   return (
-    <section id="home">   
+    <section id="home">
       <Container disableGutters maxWidth="lg" sx={styles.container}>
         <Grid container spacing={0} sx={styles.gridContainer}>
           {/* Left Column */}
           <Grid item xs={12} md={6}>
             <Box sx={styles.leftColumn}>
-              <Typography variant="h6" component="h1" color="textPrimary" gutterBottom>
+              <Typography
+                component="h1"
+                sx={{
+                  // color:"#5ae8b9",
+                  fontSize: "2rem",
+                  fontWeight: "bolder",
+                  lineHeight:1
+                }}
+                gutterBottom
+              >
                 Hello! I'm Robin Sharma
               </Typography>
-              <Typography variant="h4" component="h1" color="textPrimary" gutterBottom>
+              <Typography
+                component="h1"
+                sx={{
+                  color: "#6d07f2",
+                  fontWeight: "bolder",
+                  fontSize: "3rem",
+                  lineHeight: 1.2,
+                }}
+                gutterBottom
+              >
                 Innovative Problem Solver & Full-Stack Architect
               </Typography>
               <Typography variant="body1" color="textSecondary" paragraph>
-                As a Software Engineer, I specialize in architecting robust full-stack solutions and innovating through complex problem-solving. With a passion for cutting-edge technologies, I'm dedicated to crafting seamless digital experiences that exceed expectations. Let's collaborate and bring your ideas to life!
+                As a Software Engineer, I specialize in architecting robust
+                full-stack solutions and innovating through complex
+                problem-solving. With a passion for cutting-edge technologies,
+                I'm dedicated to crafting seamless digital experiences that
+                exceed expectations. Let's collaborate and bring your ideas to
+                life!
               </Typography>
               <Stack spacing={2} direction="row">
                 <Button variant="contained" aria-label="Hire Me">

@@ -2,7 +2,6 @@ import {
   Header,
   Hero,
   Skills,
-  About,
   Portfolio,
   Contact,
   Footer,
@@ -14,7 +13,6 @@ function App() {
       <Hero />
       <Skills />
       <Portfolio />
-      {/* <About /> */}
       <Contact />
       <Footer />
     </>

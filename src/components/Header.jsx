@@ -12,7 +12,6 @@ const sections = [
   { section: "Home", href: "" },
   { section: "Skills", href: "#skills" },
   { section: "Portfolio", href: "#portfolio" },
-  // { section: "About", href: "#about" },
   { section: "Contact", href: "#contact" },
 ];
 function Header() {
