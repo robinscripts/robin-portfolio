@@ -4,8 +4,7 @@ import HeroImage from "../../assets/images/heroCropped.png";
 
 const styles = {
   container: {
-    minHeight: 650,
-    height: "100Vh",
+    height: 600,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
