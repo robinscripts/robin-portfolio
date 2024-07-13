@@ -4,22 +4,32 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
-import { Avatar } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import logo from "../assets/logos/file.png";
+import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 
 
-const sections = [
-  { section: "Home", href: "" },
-  { section: "Skills", href: "#skills" },
-  { section: "Portfolio", href: "#portfolio" },
-  { section: "Contact", href: "#contact" },
+const socialLinks = [
+  {
+    icon: <GitHub sx={{ height: 40, width: 40 }} />,
+    link: "https://github.com/robinscripts",
+  },
+  {
+    icon: <LinkedIn sx={{ height: 40, width: 40 }} />,
+    link: "https://www.linkedin.com/in/robinsharma85",
+  },
+  {
+    icon: <Instagram sx={{ height: 40, width: 40 }} />,
+    link: "https://www.instagram.com/robin_1e",
+  },
 ];
+
 function Header() {
-    const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight/2) {
+      if (window.scrollY > window.innerHeight / 2) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -33,7 +43,8 @@ function Header() {
   }, []);
   return (
     <AppBar
-      position={isSticky?"sticky":"absolute"}
+      position={isSticky ? "sticky" : "relative"}
+      elevation={isSticky ? 4 : 0}
       sx={{
         bgcolor: "transparent.main",
         backdropFilter: "blur(60px)",
@@ -47,20 +58,25 @@ function Header() {
           sx={{ display: "flex", justifyContent: "space-between", marginY: 2 }}
         >
           <Box>
-          <Avatar alt="R" src={logo} sx={{width: 60,
-                height: 60} }/>
+            <Avatar alt="R" src={logo} sx={{ width: 60, height: 60 }} />
           </Box>
           <Box sx={{ display: "flex", gap: 3 }}>
-            {sections.map(({ section, href }) => (
-              <Link
-                underline="none"
-                color="#000"
-                key={section}
-                href={href}
-                sx={{ fontSize: "1.2rem"}}
+            {socialLinks.map((handle, index) => (
+              <IconButton
+                component="a"
+                href={handle.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: "primary.main",
+                  "&:hover": {
+                    color: "secondary.main",
+                    backgroundColor: "inherit"
+                  },
+                }}
               >
-                {section}
-              </Link>
+                {handle.icon}
+              </IconButton>
             ))}
           </Box>
         </Toolbar>

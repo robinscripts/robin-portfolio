@@ -11,7 +11,6 @@ import {
   ListItem,
   IconButton,
 } from "@mui/material";
-import RobinImage from "../assets/images/Robin.jpg";
 import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 
 const socialLinks = [

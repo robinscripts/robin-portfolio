@@ -9,7 +9,7 @@ function SectionHeader({ color, text }) {
       color={color}
       sx={{
         marginX: "auto",
-        paddingTop:13,
+        paddingTop:10,
         paddingBottom: 5,
         textAlign: "center",
       }}

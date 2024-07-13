@@ -1,25 +1,17 @@
 import React, { useState } from "react";
 import SectionHeader from "./SectionComponents/SectionHeader";
-import {
-  Container,
-  TextField,
-  Button,
-  Typography,
-  Paper,
-} from "@mui/material/";
+import { Container, TextField, Button, Box, Paper } from "@mui/material/";
 
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form submitted:", { name, email, phone, message });
+    console.log("Form submitted:", { name, email, message });
     setName("");
     setEmail("");
-    setPhone("");
     setMessage("");
   };
 
@@ -32,47 +24,44 @@ function Contact() {
       >
         <SectionHeader
           color="black"
-          text="Let's get in touch and discuss the job"
+          text="Thanks for taking the time to reach out.How can I help you today?"
         />
-        <Container disableGutters maxWidth="lg" sx={{ marginX: "auto", paddingBottom:10 }}>
-          <Paper elevation={4} sx={{ padding: 10 }}>
-            <form onSubmit={handleSubmit}>
-              <TextField
-                label="Name"
-                fullWidth
-                margin="normal"
-                variant="standard"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <TextField
-                label="Email"
-                fullWidth
-                margin="normal"
-                variant="standard"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <TextField
-                label="Phone Number"
-                fullWidth
-                margin="normal"
-                variant="standard"
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
+        <Container
+          disableGutters
+          maxWidth="md"
+          sx={{ marginX: "auto", paddingBottom: 10 }}
+        >
+          <Paper sx={{ padding: 5 }}>
+            <Box component="form" onSubmit={handleSubmit} >
+              <Box sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                flexWrap:"wrap"
+              }}>
+                <TextField
+                  label="Name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  sx={{width:"48%"}}
+                  required
+                  />
+                <TextField
+                  label="Email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  sx={{width:"48%"}}
+                  required
+                />
+              </Box>
+
               <TextField
                 label="Message"
                 fullWidth
                 multiline
                 rows={4}
                 margin="normal"
-                variant="standard"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
@@ -85,7 +74,7 @@ function Contact() {
               >
                 Submit
               </Button>
-            </form>
+            </Box>
           </Paper>
         </Container>
       </Container>

@@ -5,7 +5,7 @@ import {
   Portfolio,
   Contact,
   Footer,
-} from "./components/index";
+} from "./components/";
 function App() {
   return (
     <>
