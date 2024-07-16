@@ -1,35 +1,48 @@
 import React from "react";
-import { Container, Typography, Paper, Grid } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Card,
+  CardContent,
+  Box,
+  ListItem,
+} from "@mui/material";
 import SectionHeader from "./SectionComponents/SectionHeader";
-import JavascriptIcon from '@mui/icons-material/Javascript';
+import PhonelinkIcon from "@mui/icons-material/Phonelink";
+import List from "@mui/material/List";
+import ListItemText from "@mui/material/ListItemText";
+import DnsOutlinedIcon from "@mui/icons-material/DnsOutlined";
+import theme from "../../styles/theme";
 
-const skills = {
-  "Languages I speak": ["C++","JavaScript", "PHP"],
-  "Frontend Development": [
-    "jQuery",
-    "Reactjs",
-    "Context API",
-    "Redux",
-    "Redux Toolkit",
-    "React-Router",
-    "HTML",
-    "CSS",
-    "Material UI",
-    "Tailwind",
-    "Bootstrap",
-    "DOM",
-  ],
-  "Backend Development": [
-    "Node.js",
-    "Express.js",
-    "Axios",
-    "SQL",
-    "PostgreSQL",
-    "REST APIs",
-  ],
-  "Dev Tools":["VScode", "Git & GitHub", "PostMan"],
-  "Other works I offer": ["Debugging", "API Integration"],
-};
+const frontend = [
+  "Reactjs",
+  "JavaScript",
+  "jQuery",
+  "Context API",
+  "Redux",
+  "React-Router",
+  "HTML",
+  "CSS",
+  "Material UI",
+  "Tailwind",
+  "Bootstrap",
+];
+const backend = [
+  "PHP",
+  "JavaScript",
+  "Node.js",
+  "Express.js",
+  "Axios",
+  "SQL",
+  "PostgreSQL",
+  "REST APIs",
+];
+const others = ["C++", "Debugging", "API Integration","VScode", "Git & GitHub", "PostMan"];
+// const others = {
+//   "Dev Tools": ["VScode", "Git & GitHub", "PostMan"],
+//   "Other works I offer": ["C++", "Debugging", "API Integration"],
+// };
+
 function Skills() {
   return (
     <section id="skills">
@@ -38,7 +51,7 @@ function Skills() {
           disableGutters
           maxWidth="xl"
           sx={{
-            height: 400,
+            height: 450,
             backgroundColor: "primary.main",
           }}
         >
@@ -50,29 +63,188 @@ function Skills() {
             sx={{
               margin: "auto",
               textAlign: "center",
-              padding: "0 12%",
+              // padding: "0 12%",
+              fontSize: "1.3em",
+              // fontWeight: "bolder",
+              lineHeight: 1.2,
             }}
           >
-            {/* Digital architect by day, problem-solving ninja by night. */}
-            {/* I thrive in the world of cutting-edge tech, where I obsess over crafting flawless digital experiences. Untangling complex challenges and building robust solutions are my jam, all while keeping my finger on the pulse of the latest and greatest advancements. But for me, the journey never ends - I'm always eager to explore new technologies and methodologies, constantly seeking ways to improve and push the boundaries of what's possible. My current tech stack reflects this passion, Have a look and explore the tools and technologies I leverage to bring your ideas to life: */}
             Cutting-edge tech is my playground, where I build flawless digital
             experiences. As a passionate problem-solver, I'm constantly learning
             and pushing boundaries to craft the best solutions. Whether it's a
             complex challenge or a fresh idea, I'm eager to dive in and make it
             a reality. Have a look or explore the technologies/tools I use to
             bring your vision to life!
-            {/* Let's turn your ideas into stunning realities. Ready to collaborate and push the boundaries of what's possible? */}
           </Typography>
         </Container>
         <Container
           disableGutters
           maxWidth="lg"
           sx={{
+            display: "flex",
             marginTop: "-100px",
-            backgroundColor:"transparent"
+            [theme.breakpoints.down("md")]: {
+              flexDirection: "column",
+            },
           }}
         >
-          <Paper elevation={4} sx={{borderRadius:1}}>
+          {/* frontend */}
+          <Box sx={{ flex: 1, textAlign: "center", height: 656 }}>
+            <Card variant="outlined" sx={{ padding: "45px" }}>
+              <CardContent>
+                <Box
+                  sx={{
+                    bgcolor: "secondary.main",
+                    borderRadius: "50%",
+                    width: 90,
+                    height: 90,
+                    margin: "auto",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <PhonelinkIcon sx={{ fontSize: 48 }} />
+                </Box>
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{ paddingY: "25px", fontWeight: "bold" }}
+                >
+                  Frontend Development
+                </Typography>
+
+                <List
+                  disablePadding
+                  sx={{
+                    width: "100%",
+                    margin: "auto",
+                  }}
+                  component="ul"
+                >
+                  {frontend.map((skill) => (
+                    <>
+                      <ListItem
+                        disablePadding
+                        sx={{ color: "primary.main", textAlign: "center" }}
+                      >
+                        <ListItemText primary={skill} />
+                      </ListItem>
+                    </>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
+          </Box>
+
+          {/* backend */}
+          <Box sx={{ flex: 1, textAlign: "center" }}>
+            <Card variant="outlined" sx={{ padding: "45px", height: "100%" }}>
+              <CardContent>
+                <Box
+                  sx={{
+                    bgcolor: "secondary.main",
+                    borderRadius: "50%",
+                    width: 90,
+                    height: 90,
+                    margin: "auto",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <DnsOutlinedIcon sx={{ fontSize: 48 }} />
+                </Box>
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{ paddingY: "25px", fontWeight: "bold" }}
+                >
+                  Bacekend Development
+                </Typography>
+
+                <List
+                  disablePadding
+                  sx={{
+                    width: "100%",
+                    margin: "auto",
+                  }}
+                  component="ul"
+                >
+                  {backend.map((skill) => (
+                    <>
+                      <ListItem
+                        disablePadding
+                        sx={{ color: "primary.main", textAlign: "center" }}
+                      >
+                        <ListItemText primary={skill} />
+                      </ListItem>
+                    </>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
+          </Box>
+
+          {/* others */}
+          <Box sx={{ flex: 1, textAlign: "center" }}>
+            <Card variant="outlined" sx={{ padding: "45px", height: "100%" }}>
+              <CardContent>
+                <Box
+                  sx={{
+                    bgcolor: "secondary.main",
+                    borderRadius: "50%",
+                    width: 90,
+                    height: 90,
+                    margin: "auto",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <DnsOutlinedIcon sx={{ fontSize: 48 }} />
+                </Box>
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{ paddingY: "25px", fontWeight: "bold" }}
+                >
+                  Extra's I am Fond of
+                </Typography>
+
+                <List
+                  disablePadding
+                  sx={{
+                    width: "100%",
+                    margin: "auto",
+                  }}
+                  component="ul"
+                >
+                  {others.map((skill) => (
+                    <>
+                      <ListItem
+                        disablePadding
+                        sx={{ color: "primary.main", textAlign: "center" }}
+                      >
+                        <ListItemText primary={skill} />
+                      </ListItem>
+                    </>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
+          </Box>
+        </Container>
+      </Container>
+    </section>
+  );
+}
+
+export default Skills;
+
+// deprecated
+{
+  /* <Paper elevation={4} sx={{borderRadius:1}}>
             <Grid container sx={{ padding: "2rem",gap:3 }}>
               {Object.keys(skills).map((category,index) => (
                 <React.Fragment key={index}>
@@ -92,11 +264,5 @@ function Skills() {
                 </React.Fragment>
               ))}
             </Grid>
-          </Paper>
-        </Container>
-      </Container>
-    </section>
-  );
+          </Paper> */
 }
-
-export default Skills;

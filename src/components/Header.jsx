@@ -58,7 +58,7 @@ function Header() {
           sx={{ display: "flex", justifyContent: "space-between", marginY: 2 }}
         >
           <Box>
-            <Avatar alt="R" src={logo} sx={{ width: 60, height: 60 }} />
+            <Avatar alt="R" src={logo} sx={{ width: 70, height: 70 }} />
           </Box>
           <Box sx={{ display: "flex", gap: 3 }}>
             {socialLinks.map((handle, index) => (
